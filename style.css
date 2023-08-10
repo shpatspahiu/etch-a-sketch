@@ -10,6 +10,9 @@
   background-color: rgb(150, 150, 150);
 }
 
-.pixel {
-    background-color: brown;
+.container div {
+  border: 1px solid white;
+  background-color: rgb(118, 28, 28);
+  width: 20px;
+  height: 20px;
 }

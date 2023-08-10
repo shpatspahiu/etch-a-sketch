@@ -14,23 +14,20 @@ let pixelWidth = windowWidth / gridSize; // width * width of pixels so that all 
 
 // createPixels creates n pixels and returns an array of them
 function createPixels(n, pixelWidth) {
-  const pixelElement = document.createElement("div");
-  pixelElement.setAttribute("class", "pixel");
-  //test
-  pixelElement.style = `width: 12px; height:12px;`;
-
   // array holding the pixels
   const pixelArray = [];
 
   // fill array with necessary num of pixels
   for (let i = 0; i < n; i++) {
-    pixelArray.push(pixelElement);
+    pixelArray.push(document.createElement("div"));
   }
 
   return pixelArray;
 }
 
-createPixels(1).forEach((pixel) => {
+let pixels = createPixels(3, 0);
+
+pixels.forEach((pixel) => {
   container.appendChild(pixel);
 });
 

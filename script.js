@@ -13,7 +13,7 @@ let numOfPixels = gridSize ** 2; // total number of squares making up the grid
 let pixelWidth = windowWidth / gridSize; // width * width of pixels so that all of them fit the container
 
 // createPixels creates n pixels and returns an array of them
-function createPixels(n, pixelWidth) {
+function createPixels(n) {
   // array holding the pixels
   const pixelArray = [];
 
@@ -25,9 +25,10 @@ function createPixels(n, pixelWidth) {
   return pixelArray;
 }
 
-let pixels = createPixels(3, 0);
+let pixels = createPixels(5, 30);
 
 pixels.forEach((pixel) => {
+  pixel.style = `width: ${30}px; height: ${30}px;`;
   container.appendChild(pixel);
 });
 

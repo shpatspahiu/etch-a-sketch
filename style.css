@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+  background-color: rgb(126, 125, 125);
+  color: rgb(185, 186, 186);
+}
+
+.container {
+  width: 620px;
+  height: 620px;
+  border: 2px solid white;
+  background-color: rgb(150, 150, 150);
+}

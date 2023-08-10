@@ -8,10 +8,12 @@ container.style = `width: ${windowWidth}px; height: ${windowWidth}px`;
 // container.style = 'background-color: blue;'
 
 // declaring some useful variables:
-let gridSize = 4; // n pixels per side
+let gridSize = 32; // n pixels per side
 let numOfPixels = gridSize ** 2; // total number of squares making up the grid
-let pixelWidth = windowWidth / gridSize; // width * width of pixels so that all of them fit the container
-
+let pixelWidth = windowWidth / gridSize ; // width * width of pixels so that all of them fit the container
+console.log(
+  `gridSize: ${gridSize}, numOfPixels: ${numOfPixels}, pixelWidth: ${pixelWidth}`
+);
 // createPixels creates n pixels and returns an array of them
 function createPixels(n) {
   // array holding the pixels
@@ -25,10 +27,10 @@ function createPixels(n) {
   return pixelArray;
 }
 
-let pixels = createPixels(5, 30);
+let pixels = createPixels(numOfPixels);
 
 pixels.forEach((pixel) => {
-  pixel.style = `width: ${30}px; height: ${30}px;`;
+  pixel.style = `width: ${pixelWidth}px; height: ${pixelWidth}px;`;
   container.appendChild(pixel);
 });
 

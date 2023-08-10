@@ -5,12 +5,15 @@
 }
 
 .container {
-  display: flex;
   border: 2px solid white;
   background-color: rgb(150, 150, 150);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px;
 }
 
 .container div {
   border: 1px solid white;
   background-color: rgb(130, 28, 137);
+  margin: 0px;
 }

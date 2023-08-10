@@ -8,13 +8,13 @@ container.style = `width: ${windowWidth}px; height: ${windowWidth}px`;
 // container.style = 'background-color: blue;'
 
 // declaring some useful variables:
-let gridSize = 32; // n pixels per side
+let gridSize = 50; // n pixels per side
 let numOfPixels = gridSize ** 2; // total number of squares making up the grid
-let pixelWidth = windowWidth / gridSize ; // width * width of pixels so that all of them fit the container
-console.log(
-  `gridSize: ${gridSize}, numOfPixels: ${numOfPixels}, pixelWidth: ${pixelWidth}`
-);
-// createPixels creates n pixels and returns an array of them
+let pixelWidth = windowWidth / gridSize; // width * width of pixels so that all of them fit the container
+let pixels = createPixels(numOfPixels);
+
+
+// createPixels creates n pixels and puts them on display
 function createPixels(n) {
   // array holding the pixels
   const pixelArray = [];
@@ -24,16 +24,24 @@ function createPixels(n) {
     pixelArray.push(document.createElement("div"));
   }
 
-  return pixelArray;
+  pixelArray.forEach((pixel) => {
+    pixel.style = `width: ${pixelWidth}px; height: ${pixelWidth}px;`;
+    container.appendChild(pixel);
+  });
 }
 
-let pixels = createPixels(numOfPixels);
 
-pixels.forEach((pixel) => {
-  pixel.style = `width: ${pixelWidth}px; height: ${pixelWidth}px;`;
-  container.appendChild(pixel);
-});
+// grid size button
+const gridButton = document.querySelector(".grid-size-button");
 
-// const testParagraph = document.createElement("p");
-// testParagraph.textContent = 'Hello I"m a test paragraph';
-// container.appendChild(testParagraph);
+function updateGridSize() {
+  let n = prompt("Enter a new grid size:");
+  if (n < 1 || n > 100) {
+    gridSize = 16;
+    alert("Grid size must be between 1 and 100");
+  } else {
+    gridSize = n;
+    alert("Grid size set to " + n);
+  }
+}
+gridButton.addEventListener("click", updateGridSize);

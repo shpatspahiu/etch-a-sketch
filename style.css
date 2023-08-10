@@ -5,15 +5,27 @@
 }
 
 .container {
-  border: 2px solid white;
+  border: 3px solid white;
   background-color: rgb(150, 150, 150);
   display: flex;
   flex-wrap: wrap;
   gap: 0px;
+  margin: 5px;
+  
 }
 
 .container div {
   border: 1px solid white;
   background-color: rgb(130, 28, 137);
   margin: 0px;
+}
+
+.grid-size-button {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border-style: 3px solid black;
+  border-radius: 12px;
+  margin: 5px;
+  font-size: larger;
+  padding: 15px;
 }

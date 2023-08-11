@@ -25,14 +25,14 @@ function createGrid(size) {
 /* createPixels creates n pixels and puts them on display */
 function createPixels(n, width) {
   // array holding the pixels
-  const pixelArray = [];
+  const pixelDivs = [];
 
   // fill array with necessary num of pixels
   for (let i = 0; i < n; i++) {
-    pixelArray.push(document.createElement("div"));
+    pixelDivs.push(document.createElement("div"));
   }
 
-  pixelArray.forEach((pixel) => {
+  pixelDivs.forEach((pixel) => {
     pixel.style = `width: ${width}px; height: ${width}px;`;
     container.appendChild(pixel);
   });
@@ -54,9 +54,23 @@ function updateGridSize() {
     createGrid(n);
     alert("Grid size set to " + n);
   }
+
+  setDrawableOn();
 }
 
 // evt listener for updating grid size
 gridButton.addEventListener("click", updateGridSize);
 
 createGrid(gridSize);
+setDrawableOn();
+
+// Drawing on a grid =================================
+function setDrawableOn() {
+  const pixelDivs = container.querySelectorAll("div");
+
+  pixelDivs.forEach((pixel) => {
+    pixel.addEventListener("mouseover", () => {
+      pixel.style["background-color"] = "black";
+    });
+  });
+}

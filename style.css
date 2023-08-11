@@ -4,6 +4,15 @@
   color: rgb(185, 186, 186);
 }
 
+#main-container {
+  margin: auto;
+  text-align: center;
+}
+
+#main-container h1 {
+  color: black;
+}
+
 .container {
   box-sizing: content-box;
   border: 3px solid rgb(0, 0, 0);
@@ -11,7 +20,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0px;
-  margin: 5px;
+  margin: auto;
+  margin-top: 22px;
 }
 
 .container div {
@@ -21,8 +31,8 @@
 }
 
 .grid-size-button {
-  background-color: rgb(255, 255, 255);
-  color: black;
+  background-color: rgb(149, 37, 37);
+  color: rgb(220, 220, 220);
   border-style: 3px solid black;
   border-radius: 12px;
   margin: 5px;

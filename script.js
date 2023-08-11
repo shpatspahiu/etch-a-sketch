@@ -12,8 +12,8 @@ const gridButton = document.querySelector(".grid-size-button");
 // if another style is applied, the styles before this get 'overwritten'
 // container.style = 'background-color: blue;'
 
-// declaring some useful variables:
-let gridSize = 4; // n pixels per side
+// Default grid size declaring some useful variables:
+const gridSize = 16; // n pixels per side
 
 /* createGrid */
 function createGrid(size) {
@@ -21,8 +21,6 @@ function createGrid(size) {
   let pixelWidth = windowWidth / size - 2; // width * width of pixels so that all of them fit the container
   createPixels(numOfPixels, pixelWidth);
 }
-
-createGrid(gridSize);
 
 /* createPixels creates n pixels and puts them on display */
 function createPixels(n, width) {
@@ -40,20 +38,26 @@ function createPixels(n, width) {
   });
 }
 
-/* updateGridSize */
+// removePixels will remove elements, making space for new elements to come
+function removePixels() {
+  container.textContent = "";
+}
+
+/* updateGridSize will update grid size based on user request */
 function updateGridSize() {
-  let n = prompt("Enter a new grid size:");
+  let n = parseInt(prompt("Enter a new grid size:"));
+  removePixels(); 
   if (n < 1 || n > 100) {
-    gridSize = 16;
-    alert("Grid size must be between 1 and 100");
+    createGrid(gridSize);
+    alert("Grid size must be between 1 and 100\nDefault grid size will be set");
   } else {
-    gridSize = n;
+    createGrid(n);
     alert("Grid size set to " + n);
   }
 }
+
+// evt listener for updating grid size
 gridButton.addEventListener("click", updateGridSize);
 
-createGrid(0);
+createGrid(gridSize);
 
-// TODO: a function to remove every child from the sketch window
-// TODO: a function to create a new grid

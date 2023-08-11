@@ -5,13 +5,13 @@
 }
 
 .container {
-  border: 3px solid white;
+  box-sizing: content-box;
+  border: 3px solid rgb(0, 0, 0);
   background-color: rgb(150, 150, 150);
   display: flex;
   flex-wrap: wrap;
   gap: 0px;
   margin: 5px;
-  
 }
 
 .container div {

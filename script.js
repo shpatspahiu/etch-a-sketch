@@ -18,7 +18,7 @@ const gridSize = 16; // n pixels per side
 /* createGrid */
 function createGrid(size) {
   let numOfPixels = size ** 2; // total number of squares making up the grid
-  let pixelWidth = windowWidth / size - 2; // width * width of pixels so that all of them fit the container
+  let pixelWidth = windowWidth / size; // width * width of pixels so that all of them fit the container
   createPixels(numOfPixels, pixelWidth);
 }
 
@@ -46,7 +46,7 @@ function removePixels() {
 /* updateGridSize will update grid size based on user request */
 function updateGridSize() {
   let n = parseInt(prompt("Enter a new grid size:"));
-  removePixels(); 
+  removePixels();
   if (n < 1 || n > 100) {
     createGrid(gridSize);
     alert("Grid size must be between 1 and 100\nDefault grid size will be set");
@@ -60,4 +60,3 @@ function updateGridSize() {
 gridButton.addEventListener("click", updateGridSize);
 
 createGrid(gridSize);
-

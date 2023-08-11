@@ -1,21 +1,31 @@
+// Sketch window width
+const windowWidth = 480;
+
 // Sketch window
-const windowWidth = 620;
 const container = document.querySelector(".container");
 container.style = `width: ${windowWidth}px; height: ${windowWidth}px`;
+
+// grid size button
+const gridButton = document.querySelector(".grid-size-button");
 
 // CAUTION:
 // if another style is applied, the styles before this get 'overwritten'
 // container.style = 'background-color: blue;'
 
 // declaring some useful variables:
-let gridSize = 50; // n pixels per side
-let numOfPixels = gridSize ** 2; // total number of squares making up the grid
-let pixelWidth = windowWidth / gridSize; // width * width of pixels so that all of them fit the container
-let pixels = createPixels(numOfPixels);
+let gridSize = 4; // n pixels per side
 
+/* createGrid */
+function createGrid(size) {
+  let numOfPixels = size ** 2; // total number of squares making up the grid
+  let pixelWidth = windowWidth / size - 2; // width * width of pixels so that all of them fit the container
+  createPixels(numOfPixels, pixelWidth);
+}
 
-// createPixels creates n pixels and puts them on display
-function createPixels(n) {
+createGrid(gridSize);
+
+/* createPixels creates n pixels and puts them on display */
+function createPixels(n, width) {
   // array holding the pixels
   const pixelArray = [];
 
@@ -25,15 +35,12 @@ function createPixels(n) {
   }
 
   pixelArray.forEach((pixel) => {
-    pixel.style = `width: ${pixelWidth}px; height: ${pixelWidth}px;`;
+    pixel.style = `width: ${width}px; height: ${width}px;`;
     container.appendChild(pixel);
   });
 }
 
-
-// grid size button
-const gridButton = document.querySelector(".grid-size-button");
-
+/* updateGridSize */
 function updateGridSize() {
   let n = prompt("Enter a new grid size:");
   if (n < 1 || n > 100) {
@@ -45,3 +52,8 @@ function updateGridSize() {
   }
 }
 gridButton.addEventListener("click", updateGridSize);
+
+createGrid(0);
+
+// TODO: a function to remove every child from the sketch window
+// TODO: a function to create a new grid

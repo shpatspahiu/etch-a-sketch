@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  background-color: rgb(126, 125, 125);
+  background-color: rgb(182, 162, 106);
   color: rgb(185, 186, 186);
 }
 
@@ -10,14 +10,16 @@
 }
 
 #main-container h1 {
-  font-size: 36px;
-  color: rgb(19, 9, 107);
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
+  font-size: 58px;
+  color: rgb(19, 43, 90);
+  margin-top: 16px;
+  margin-bottom: 24px;
+font-family: 'Courier New', Courier, monospace;}
 
 .container {
   box-sizing: content-box;
-  border: 3px solid rgb(0, 0, 0);
+  border: 45px solid rgb(4, 5, 68);
+  border-radius: 12px;
   background-color: rgb(150, 150, 150);
   display: flex;
   flex-wrap: wrap;
@@ -32,16 +34,14 @@
   margin: 0px;
 }
 
-/* .container div:hover {
-  background-color: black;
-} */
-
 .drawnPixel {
   background-color: black;
 }
 
-.grid-size-button {
-  background-color: rgb(149, 37, 37);
+.grid-size-button,
+.reset-button {
+  border-style: none;
+  background-color: rgb(4, 5, 68);
   color: rgb(220, 220, 220);
   border-style: 3px solid black;
   border-radius: 12px;

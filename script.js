@@ -6,7 +6,9 @@ const container = document.querySelector(".container");
 container.style = `width: ${windowWidth}px; height: ${windowWidth}px`;
 
 // grid size button
-const gridButton = document.querySelector(".grid-size-button");
+const gridSizeButton = document.querySelector(".grid-size-button");
+// reset button
+const resetButton = document.querySelector(".reset-button");
 
 // CAUTION:
 // if another style is applied, the styles before this get 'overwritten'
@@ -52,14 +54,20 @@ function updateGridSize() {
     alert("Grid size must be between 1 and 100\nDefault grid size will be set");
   } else {
     createGrid(n);
-    alert("Grid size set to " + n);
+    alert("Grid size set to " + n + " x " + n);
   }
-
   setDrawableOn();
 }
 
 // evt listener for updating grid size
-gridButton.addEventListener("click", updateGridSize);
+gridSizeButton.addEventListener("click", updateGridSize);
+
+//
+resetButton.addEventListener("click", () => {
+  removePixels();
+  createGrid(gridSize);
+  setDrawableOn();
+});
 
 createGrid(gridSize);
 setDrawableOn();

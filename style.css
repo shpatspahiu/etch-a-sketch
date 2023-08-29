@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
-  background-color: rgb(182, 162, 106);
-  color: rgb(185, 186, 186);
+  background-color: rgb(255, 209, 229);
+  font-family: "ClayBornRegular", monospace;
 }
 
 #main-container {
@@ -10,17 +10,19 @@
 }
 
 #main-container h1 {
-  font-size: 58px;
-  color: rgb(19, 43, 90);
-  margin-top: 16px;
+  font-size: 64px;
+  letter-spacing: 1rem;
+  color: rgb(162, 8, 75);
+  margin-top: 36px;
   margin-bottom: 24px;
-font-family: 'Courier New', Courier, monospace;}
+  font-family: "ClayBornRegular", monospace;
+}
 
 .container {
   box-sizing: content-box;
-  border: 45px solid rgb(4, 5, 68);
+  border: 45px solid rgb(162, 8, 75);
   border-radius: 12px;
-  background-color: rgb(150, 150, 150);
+
   display: flex;
   flex-wrap: wrap;
   gap: 0px;
@@ -41,11 +43,16 @@ font-family: 'Courier New', Courier, monospace;}
 .grid-size-button,
 .reset-button {
   border-style: none;
-  background-color: rgb(4, 5, 68);
-  color: rgb(220, 220, 220);
-  border-style: 3px solid black;
+  color: rgba(162, 8, 75, 0.8);
+  background-color: rgba(162, 8, 75, 0.1);;
+  border: 5px solid rgba(162, 8, 75, 0.8);
   border-radius: 12px;
   margin: 5px;
   font-size: 26px;
-  padding: 15px;
+  padding: 12px;
 }
+
+button:active {
+  scale: 0.95;
+}
+

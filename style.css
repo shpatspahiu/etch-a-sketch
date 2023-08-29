@@ -2,6 +2,7 @@
   box-sizing: border-box;
   background-color: rgb(255, 209, 229);
   font-family: "ClayBornRegular", monospace;
+  color: rgb(162, 8, 75);
 }
 
 #main-container {
@@ -11,11 +12,11 @@
 
 #main-container h1 {
   font-size: 64px;
-  letter-spacing: 1rem;
-  color: rgb(162, 8, 75);
+  letter-spacing: 0.8rem;
   margin-top: 36px;
   margin-bottom: 24px;
   font-family: "ClayBornRegular", monospace;
+  text-shadow: rgba(162, 8, 75, 0.259) 3px 4px 3px;
 }
 
 .container {
@@ -43,8 +44,7 @@
 .grid-size-button,
 .reset-button {
   border-style: none;
-  color: rgba(162, 8, 75, 0.8);
-  background-color: rgba(162, 8, 75, 0.1);;
+  background-color: rgba(162, 8, 75, 0.1);
   border: 5px solid rgba(162, 8, 75, 0.8);
   border-radius: 12px;
   margin: 5px;
@@ -55,4 +55,3 @@
 button:active {
   scale: 0.95;
 }
-

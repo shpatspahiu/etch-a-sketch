@@ -23,7 +23,7 @@
   box-sizing: content-box;
   border: 45px solid rgb(162, 8, 75);
   border-radius: 12px;
-
+  box-shadow: 6px 8px 8px rgba(162, 8, 75, 0.501);
   display: flex;
   flex-wrap: wrap;
   gap: 0px;
@@ -50,8 +50,10 @@
   margin: 5px;
   font-size: 26px;
   padding: 12px;
+  box-shadow: 3px 5px 5px rgba(162, 8, 75, 0.301);
 }
 
 button:active {
   scale: 0.95;
+  box-shadow: 3px 5px 5px rgba(162, 8, 75, 0.1);
 }

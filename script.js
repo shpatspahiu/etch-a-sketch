@@ -60,13 +60,15 @@ function updateGridSize() {
 }
 
 // evt listener for updating grid size
-gridSizeButton.addEventListener("click", updateGridSize);
+// gridSizeButton.addEventListener("click", updateGridSize);
 
 //
 resetButton.addEventListener("click", () => {
   removePixels();
   createGrid(gridSize);
   setDrawableOn();
+  slider.value = 16;
+  sizeOutput.textContent = 16;
 });
 
 createGrid(gridSize);
@@ -82,3 +84,15 @@ function setDrawableOn() {
     });
   });
 }
+
+const slider = document.querySelector("#slider");
+const sizeOutput = document.querySelector(".slider-output");
+
+sizeOutput.textContent = slider.value;
+
+slider.addEventListener("input", () => {
+  removePixels();
+  createGrid(slider.value);
+  setDrawableOn();
+  sizeOutput.textContent = slider.value;
+});

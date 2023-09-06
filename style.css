@@ -23,7 +23,7 @@
   box-sizing: content-box;
   border: 45px solid rgb(162, 8, 75);
   border-radius: 12px;
-  box-shadow: 6px 8px 8px rgba(162, 8, 75, 0.501);
+  box-shadow: 6px 6px 6px rgba(162, 8, 75, 0.301);
   display: flex;
   flex-wrap: wrap;
   gap: 0px;
@@ -37,13 +37,13 @@
   margin: 0px;
 }
 
-.grid-size-button,
 .reset-button {
   border-style: none;
   background-color: rgba(162, 8, 75, 0.1);
   border: 5px solid rgba(162, 8, 75, 0.8);
   border-radius: 12px;
   margin: 5px;
+  margin-top: 16px;
   font-size: 26px;
   padding: 12px;
   box-shadow: 3px 5px 5px rgba(162, 8, 75, 0.301);
@@ -53,4 +53,14 @@
 button:active {
   scale: 0.95;
   box-shadow: 3px 5px 5px rgba(162, 8, 75, 0.1);
+}
+
+#slider {
+  margin-top: 16px;
+  width: 300px;
+}
+
+p {
+  margin: 0;
+  font-size: 24px;
 }
